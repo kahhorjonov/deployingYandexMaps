@@ -1,0 +1,27 @@
+.footer {
+  background-color: #707b84;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.socialMedia {
+  padding: 15px 10px;
+  text-align: center;
+}
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  padding: 3px;
+}
+.footer a:hover {
+  text-decoration: underline 3px solid #00394fd0;
+  transition: 0.3s;
+}
+
+.footer p {
+  padding: 15px;
+  color: white;
+  text-align: center;
+}

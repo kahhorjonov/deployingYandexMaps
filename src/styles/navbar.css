@@ -1,0 +1,126 @@
+.fragment {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #707b84;
+}
+
+.navbar {
+  width: 1300px;
+  height: 55px;
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .leftSide,
+.navbar .nav-logo,
+.navbar .navMenu {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .leftSide .nav-logo-img:active,
+.navbar .leftSide .nav-logo-img:focus,
+.navbar .leftSide .nav-logo-img:hover {
+  padding-bottom: 0;
+  border-bottom: none;
+  color: #fff !important;
+}
+
+.navbar .leftSide img {
+  display: block !important;
+  width: 100px;
+  height: 50px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 20px;
+  font-size: 20px;
+}
+.navbar a:active,
+.navbar a:focus,
+.navbar a:hover {
+  transition: 0.3s;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #00394fd0;
+  color: #fff;
+}
+
+.navbar .gamburger {
+  display: none;
+}
+
+.navbar .gamburger button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.navbar .gamburger svg {
+  font-size: 40px;
+}
+
+.gamburger .gamMenu {
+  position: absolute;
+  background: rgb(30, 143, 255);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* animation: gamMenuAnim 0.5s linear 0s 1; */
+}
+
+.gamburger .gamMenu .closeGamMenu {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid;
+  font-size: 30px;
+  padding: 5px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+.gamMenu {
+  display: flex;
+}
+
+@keyframes gamMenuAnim {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .navbar {
+    padding: 0px 30px;
+  }
+  .navbar .leftSide img {
+    width: 70px;
+    height: 45px;
+  }
+  .navbar .leftSide .nameOffice {
+    display: none;
+    /* font-size: 15px; */
+  }
+  .navbar .navMenu {
+    display: none;
+  }
+  .navbar .gamburger {
+    display: flex;
+  }
+}
