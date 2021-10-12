@@ -1,5 +1,5 @@
 .footer {
-  background-color: #707b84;
+  background-color: #00394f;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +16,7 @@
   padding: 3px;
 }
 .footer a:hover {
-  text-decoration: underline 3px solid #00394fd0;
+  text-decoration: underline 3px solid #d4d6d6d0;
   transition: 0.3s;
 }
 

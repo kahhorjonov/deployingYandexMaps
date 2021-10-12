@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "../styles/table-comp.css";
 import tableComponents from "../components/table-data.json";
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
 import { Link } from "react-router-dom";
+import TimerIcon from "@material-ui/icons/Timer";
+import BuildIcon from "@material-ui/icons/Build";
+import DoneIcon from "@material-ui/icons/Done";
 
 function Table() {
   let id = 1;

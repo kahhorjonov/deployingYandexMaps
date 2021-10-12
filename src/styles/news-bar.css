@@ -5,8 +5,7 @@
   align-items: center;
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.411);
-  backdrop-filter: blur(7px);
-
+  backdrop-filter: blur(10px);
 }
 
 .newsContainer {
@@ -15,8 +14,8 @@
 }
 
 .newsContainer h1 {
-    font-size: 3em;
-    padding: 3px;
+  font-size: 3em;
+  padding: 3px;
 }
 
 .news {
@@ -32,13 +31,13 @@
 }
 
 .news1 img {
-  width: 200px;
-  /* height: 200px; */
+  width: 400px;
+  height: 200px;
   border: 2px solid;
 }
 
 .news1 h2 {
-    padding: 5px;
+  padding: 5px;
 }
 
 .news1 h3 {
@@ -46,12 +45,10 @@
 }
 
 .news1 a {
-    font-size: 20px;
-    text-decoration: none;
-    color: red;
-    
-    }
-
+  font-size: 20px;
+  text-decoration: none;
+  color: red;
+}
 
 @media screen and (max-width: 870px) {
   .newsContainer h1 {
@@ -71,11 +68,11 @@
     margin-bottom: 40px;
   }
 
-  .news1 img{
+  .news1 img {
     width: 300px;
     height: 150px;
   }
-  
+
   .news1 h2 {
     font-size: 22px;
   }

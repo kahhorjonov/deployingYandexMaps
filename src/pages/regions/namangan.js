@@ -1,5 +1,8 @@
 import React from "react";
 import "../../styles/regions.css";
+import TimerIcon from "@material-ui/icons/Timer";
+import BuildIcon from "@material-ui/icons/Build";
+import DoneIcon from "@material-ui/icons/Done";
 
 function namangan() {
   return (
@@ -18,9 +21,18 @@ function namangan() {
 
         {/* map */}
         <div className="marks">
-          <p className="plan">rejalashtirilayotgan</p>
-          <p className="roat">ta'mirlanayotgan</p>
-          <p className="complated">tugatilgan</p>
+          <p className="plan">
+            <TimerIcon />
+            rejalashtirilayotgan
+          </p>
+          <p className="roat">
+            <BuildIcon />
+            ta'mirlanayotgan
+          </p>
+          <p className="complated">
+            <DoneIcon />
+            tugatilgan
+          </p>
         </div>
       </div>
     </div>

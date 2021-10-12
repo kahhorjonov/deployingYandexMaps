@@ -3,6 +3,7 @@ import data from "./table-data.json";
 import imgs from "../assets/not-found.png";
 
 function News1(props) {
+  const imgs = props.table.image;
   return (
     <div className="news1">
       <img src={imgs} />
