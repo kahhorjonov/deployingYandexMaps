@@ -1,5 +1,4 @@
 import "./App.css";
-import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import Home from "./pages/home";
 import About from "./pages/about";
@@ -23,35 +22,36 @@ import Navoi from "./pages/regions/navoi";
 import Karakalpakistan from "./pages/regions/karakalpakistan";
 import Khorazm from "./pages/regions/khorazm";
 import Bukhoro from "./pages/regions/bukhoro";
+import NavBar from "./components/navbar";
 // end regions
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <Navbar />
+        <NavBar />
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/about" exact component={About} />
-          <Route path="/contact" exact component={Contact} />
-          <Route path="/table-comp" exact component={Table} />
-          <Route path="/tabletemplate" exact component={TableTemplate} />
-          <Route path="/newstemplate" exact component={NewsTemplate} />
+          <Route path="/about" component={About} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/table-comp" component={Table} />
+          <Route path="/tabletemplate" component={TableTemplate} />
+          <Route path="/newstemplate" component={NewsTemplate} />
           {/* regions */}
-          <Route path="/tashkentcity" exact component={Tashkentcity} />
-          <Route path="/tashkentreg" exact component={Tashkentreg} />
-          <Route path="/sirdaryo" exact component={Sirdaryo} />
-          <Route path="/jizzakh" exact component={Jizzakh} />
-          <Route path="/fergana" exact component={Fergana} />
-          <Route path="/namangan" exact component={Namangan} />
-          <Route path="/andijan" exact component={Andijan} />
-          <Route path="/surkhandaryo" exact component={Surkhandaryo} />
-          <Route path="/kashkadaryo" exact component={Kashkadaryo} />
-          <Route path="/samarkand" exact component={Samarkand} />
-          <Route path="/navoi" exact component={Navoi} />
-          <Route path="/karakalpakistan" exact component={Karakalpakistan} />
-          <Route path="/khorazm" exact component={Khorazm} />
-          <Route path="/bukhoro" exact component={Bukhoro} />
+          <Route path="/tashkentcity" component={Tashkentcity} />
+          <Route path="/tashkentreg" component={Tashkentreg} />
+          <Route path="/sirdaryo" component={Sirdaryo} />
+          <Route path="/jizzakh" component={Jizzakh} />
+          <Route path="/fergana" component={Fergana} />
+          <Route path="/namangan" component={Namangan} />
+          <Route path="/andijan" component={Andijan} />
+          <Route path="/surkhandaryo" component={Surkhandaryo} />
+          <Route path="/kashkadaryo" component={Kashkadaryo} />
+          <Route path="/samarkand" component={Samarkand} />
+          <Route path="/navoi" component={Navoi} />
+          <Route path="/karakalpakistan" component={Karakalpakistan} />
+          <Route path="/khorazm" component={Khorazm} />
+          <Route path="/bukhoro" component={Bukhoro} />
           {/* end regions */}
         </Switch>
         <Footer />

@@ -8,7 +8,25 @@
 }
 .news_template img {
   float: left;
-  width: 500px;
-  height: 400px;
-  padding: 25px;
+  width: 400px;
+  /* height: 400px; */
+  /* padding: 25px; */
+}
+
+@media screen and (max-width: 640px) {
+  
+    .news_template {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      transition: 0.5s;
+      padding: 10px;
+    }
+    .news_template .title {
+      /* padding: 5px; */
+    }
+    .news_template img {
+      width: 70%;
+    }
+
 }

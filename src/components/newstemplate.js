@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/newstemplate.css";
-import Image from "../assets/not-found.png";
+import Image from "../styles/1.jpg";
 
 function newstemplate() {
   return (

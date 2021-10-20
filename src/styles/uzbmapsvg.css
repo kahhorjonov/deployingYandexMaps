@@ -1,0 +1,27 @@
+.uzbmapsvg {
+  position: relative;
+  width: 900px;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0px;
+}
+.uzbmapsvg svg {
+  width: 100%;
+  height: 100%;
+}
+.region {
+  fill: #00394f;
+  transition: 0.5s;
+  transform-origin: center;
+}
+.region:hover {
+  stroke-width: 1.5px;
+  filter: drop-shadow(0px 10px 0px black);
+  transform: translateY(-5px);
+}
+/* 
+.region:active {
+  transform: scale(3);
+} */

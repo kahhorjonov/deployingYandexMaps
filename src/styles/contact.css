@@ -3,21 +3,23 @@
 }
 .bodyContact {
   height: 100%;
-  width: 100%;
+  background-image: url(../assets/back.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.contactCont {
+  backdrop-filter: blur(10px) contrast(70%);
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(10px);
 }
-
 .contact {
   width: 1200px;
   color: black;
   display: flex;
   justify-content: space-between;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
 }
 
 .contact .leftSide {
@@ -58,9 +60,8 @@
 }
 
 .contact .rightSide {
-  padding: 10px 50px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+  /* padding: 10px 50px; */
+  height: 700px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -106,7 +107,7 @@ form textarea {
 }
 input::placeholder,
 textarea::placeholder {
-  color: gray;
+  color: rgb(43, 43, 43);
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -139,7 +140,7 @@ form button:hover {
   transition: 0.3s;
 }
 
-.region,
+.regionSelect,
 .district {
   width: 50%;
   height: 40px;
@@ -149,7 +150,7 @@ form button:hover {
   border: 2px solid #000;
   border-radius: 5px;
 }
-.region option,
+.regionSelect option,
 .district option {
   color: black;
 }
@@ -162,7 +163,8 @@ form-control__file {
   .contact {
     flex-direction: column-reverse;
     align-items: center;
-    margin-top: 5px;
+    padding-top: 40px;
+    height: max-content;
   }
 
   .contact .leftSide {

@@ -2,13 +2,9 @@ import React, { useState, useEffect } from "react";
 import "../styles/table-comp.css";
 import tableComponents from "../components/table-data.json";
 import { Link } from "react-router-dom";
-import TimerIcon from "@material-ui/icons/Timer";
-import BuildIcon from "@material-ui/icons/Build";
-import DoneIcon from "@material-ui/icons/Done";
 
-function Table() {
+function Table(props) {
   let id = 1;
-
   const [searchTerm, setSearchTerm] = useState("");
   const [selectStatusState, setSelectStatusState] = useState("");
 
@@ -61,76 +57,82 @@ function Table() {
 
   return (
     <div className="bodyTable">
-      <div class="tableNav">
-        <select
-          className="selectStatus"
-          name="status"
-          onChange={handleSelectStatusChange}
-        >
-          <option value="default" selected disabled>
-            Holatni tanlang
-          </option>
-          <option value="barchasi">Barchasi</option>
-          <option value="ta'mirlanmoqda">Ta'mirlanayotgan yo'llar</option>
-          <option value="rejalashtirilmoqda">
-            Ta'mirlanishi rejalashtirilgan yo'llar
-          </option>
-          <option value="tayyor">Ta'mirlanib bo'lgan yo'llar</option>
-        </select>
-        <input
-          type="text"
-          onChange={(event) => {
-            setSearchTerm(event.target.value);
-          }}
-          className="searchInp"
-          placeholder="Qidiruv..."
-        />
+      <div className="tableCont">
+        <div class="tableNav">
+          <select
+            className="selectStatus"
+            name="status"
+            onChange={handleSelectStatusChange}
+          >
+            <option value="default" selected disabled>
+              Holatni tanlang
+            </option>
+            <option value="barchasi">Barchasi</option>
+            <option value="ta'mirlanmoqda">Ta'mirlanayotgan yo'llar</option>
+            <option value="rejalashtirilmoqda">
+              Ta'mirlanishi rejalashtirilgan yo'llar
+            </option>
+            <option value="tayyor">Ta'mirlanib bo'lgan yo'llar</option>
+          </select>
+          <input
+            type="text"
+            onChange={(event) => {
+              setSearchTerm(event.target.value);
+            }}
+            className="searchInp"
+            placeholder="Qidiruv..."
+          />
+        </div>
+        <table className="table">
+          <tr key={"asos"}>
+            <th sort="ars">№</th>
+            <th>Ko'cha nomi</th>
+            <th>Xolati</th>
+            <th>Yo'l uzunligi</th>
+            <th>Boshlangan sana</th>
+            <th>Tugatilgan sana</th>
+            <th>...</th>
+            {/* <th>Mablag'</th>
+            <th>O'zlahtirilgan mablag'</th>
+            <th>Davlat</th>
+            <th>Organ</th>
+            <th>Tashkilot</th>
+            <th>Sana</th>
+            <th>Ishchilar soni</th> */}
+          </tr>
+          {tableComponents
+            .filter(
+              (val) => selectFilter(val, selectStatusState) && search(val)
+            )
+            .map((comp) => {
+              return (
+                <tr className="" key={id++}>
+                  <td>{id}</td>
+                  <td>{comp.nomi}</td>
+                  <td>{comp.statusi}</td>
+                  <td>{comp.uzunligi}</td>
+                  <td>{comp.boshlangan}</td>
+                  <td>{comp.tugatiladi}</td>
+                  <td>
+                    <Link to={{ pathname: "/tabletemplate", state: { comp } }}>
+                      📝
+                      <span className="more" id={id}>
+                        Batafsil...
+                      </span>
+                    </Link>
+                  </td>
+                  {/* <td>{comp.mablag}</td>
+                  <td>{comp.ozlashtirilgan}</td>
+                  <td>{comp.manbai}</td>
+                  <td>{comp.organ}</td>
+                  <td>{comp.pudratchi}</td>
+                  <td>{comp.sana}</td>
+                  <td>{comp.ishchilar}</td> */}
+                </tr>
+              );
+            })}
+        </table>
       </div>
-
-      <table className="table">
-        <tr key={"asos"}>
-          <th sort="ars">№</th>
-          <th>Ko'cha nomi</th>
-          <th>Xolati</th>
-          <th>Yo'l uzunligi</th>
-          <th>Boshlangan sana</th>
-          <th>Tugatilgan sana</th>
-          <th>...</th>
-          {/* <th>Mablag'</th>
-          <th>O'zlahtirilgan mablag'</th>
-          <th>Davlat</th>
-          <th>Organ</th>
-          <th>Tashkilot</th>
-          <th>Sana</th>
-          <th>Ishchilar soni</th> */}
-        </tr>
-        {tableComponents
-          .filter((val) => selectFilter(val, selectStatusState) && search(val))
-          .map((comp) => {
-            return (
-              <tr className="" key={id++}>
-                <td>{id}</td>
-                <td>{comp.nomi}</td>
-                <td>{comp.statusi}</td>
-                <td>{comp.uzunligi}</td>
-                <td>{comp.boshlangan}</td>
-                <td>{comp.tugatiladi}</td>
-                <td>
-                  <Link to="/tabletemplate">
-                    📝<span class="more">Batafsil...</span>
-                  </Link>
-                </td>
-                {/* <td>{comp.mablag}</td>
-                <td>{comp.ozlashtirilgan}</td>
-                <td>{comp.manbai}</td>
-                <td>{comp.organ}</td>
-                <td>{comp.pudratchi}</td>
-                <td>{comp.sana}</td>
-                <td>{comp.ishchilar}</td> */}
-              </tr>
-            );
-          })}
-      </table>
     </div>
   );
 }
